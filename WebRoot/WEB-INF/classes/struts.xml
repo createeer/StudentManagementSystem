@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+    <package name = "default" namespace="/" extends="struts-default">
+   
+    </package>
+    <package name = "user" namespace = "/" extends = "default">
+        <action name = "*_*" class = "com.stumanage.action.{1}Action" method = "{2}">
+        <result name="login_success" >/user/login_success.jsp</result>
+        <result name = "login_fail">/user/login.jsp</result>
+        <result name = "logout_success">/user/login.jsp</result>
+        </action>
+    </package>
+    <package name = "student" namespace = "/" extends = "default">
+        <action name = "StudentAction_*" class = "com.stumanage.action.StudentAction" method = "{1}">
+            <result name = "query_success">/student/query_success.jsp</result>
+            <result name = "del_success"  >/student/query_success.jsp</result>
+        </action>
+    </package>
+</struts>    
